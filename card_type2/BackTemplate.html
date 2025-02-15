@@ -1,0 +1,16 @@
+<div class="back">
+  {{FrontSide}}
+  <div class="sound">{{Sound}}</div>
+  <hr class="front-back-sep" />
+
+  <div class="back-only">
+    {{#Mnemonic}}
+    <div class="mnemonic">
+      <h2 class="subtle-heading">Mnemonic</h2>
+      {{Mnemonic}}
+    </div>
+    {{/Mnemonic}} {{#Extra}}
+    <div class="extra">{{Extra}}</div>
+    {{/Extra}}
+  </div>
+</div>

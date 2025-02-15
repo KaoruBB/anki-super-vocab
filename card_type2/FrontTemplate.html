@@ -1,0 +1,51 @@
+<!-- Wrap with conditional. If no examples present, then front will be empty and the
+cloze card (card 2) won't be created. -->
+{{#Meaning}}
+<div class="front">
+  <div class="example" class="cloze-prompt">{{Meaning}}</div>
+  <h1>{{type::Word}}</h1>
+  <div class="h2-subtitle">({{WordClass}})</div>
+</div>
+
+{{#Hint}}
+<div class="hint">hint: {{Hint}}</div>
+{{/Hint}}
+
+<script>
+  // https://jsfiddle.net/3cjwp9vd/
+  function hideWord2(element, words, spanClass) {
+    let word_re = "(" + words.join("|") + ")";
+    let re = new RegExp("\\w*" + word_re + "\\w*", "gi");
+    function replacer(match, string) {
+      isFrontSide = !element.closest(".back");
+      if (isFrontSide) {
+        return `<span class='${spanClass}'> [...] </span>`;
+      } else {
+        return `<span class='${spanClass}'> ${match} </span>`;
+      }
+    }
+
+    element.innerHTML = element.innerHTML.replace(re, replacer);
+  }
+
+  var altWords = "{{ClozeForm}}"
+    .replace(/>\s+|\s+</g, (match) => match.trim())
+    .replace(/<\/?[^>]+(>|$)/g, "")
+    .trim()
+    .split(",")
+    .filter(function (s) {
+      return s.length != 0;
+    });
+  var words = [
+    "{{Word}}"
+      .replace(/>\s+|\s+</g, (match) => match.trim())
+      .replace(/<\/?[^>]+(>|$)/g, ""),
+  ].concat(altWords);
+  var exampleDiv = document.querySelector(".example");
+  // Debugging:
+  // exampleDiv.innerHTML = altWords
+  hideWord2(exampleDiv, words, "manual-cloze");
+  var subTitleDiv = document.querySelector(".h2-subtitle");
+  subTitleDiv.innerHTML = subTitleDiv.innerHTML.replace(/<\/?[^>]+(>|$)/g, "");
+</script>
+{{/Meaning}}

@@ -1,0 +1,128 @@
+#+title: Readme
+#+OPTIONS: toc:nil num:nil
+* Anki Super Vocab
+
+[[file:image/superVocabDemo.gif]]
+
+This repository provides a beautifully designed Anki note type for efficient vocabulary learning.  It's designed to help you learn words in languages like English.
+
+** Features:
+
+- *Beautifully Designed HTML:*  The cards are visually appealing and easy to read.
+- *Two Card Types:*
+    1.  *Word -> Meaning:*  Tests your ability to recall the definition of a given word.
+    2.  *Meaning -> Word:*  Tests your ability to recall the word given its definition.
+- *Automatic Cloze Deletion (Meaning -> Word):*
+  In the "Meaning -> Word" card type, the target word is automatically cloze-deleted (blanked out) within the example sentences provided in the "Meaning" field. This encourages active recall and contextual understanding.
+- *Customizable Fields:*  Includes the following fields for comprehensive vocabulary learning:
+    - =Word=: The word you are learning.
+    - =Sound=:  Pronunciation information (e.g., IPA, audio file link).
+    - =WordClass=:  Part of speech (e.g., noun, verb, adjective).
+    - =Meaning=: Definition and example sentences.
+    - =ClozeForm=:  An optional field for an alternative cloze form of the word (e.g., a different inflection).
+    - =Mnemonic=:  A memory aid to help you remember the word.
+    - =Hint=:  An optional hint to help you recall the word.
+    - =Extra=:  A field for any additional information (e.g., etymology, related words).
+
+**Repository Structure:**
+#+begin_src sh :results output :exports both
+tree
+#+end_src
+
+#+RESULTS:
+#+begin_example
+.
+├── README.org
+├── Super Vocab (note type).apkg
+├── anki-superVocab-snippet
+├── card_type1
+│   ├── BackTemplate.html
+│   ├── FrontTemplate.html
+│   └── Styling.css
+├── card_type2
+│   ├── BackTemplate.html
+│   ├── FrontTemplate.html
+│   └── Styling.css
+└── image
+    ├── drake.webp
+    └── superVocabDemo.gif
+
+4 directories, 11 files
+#+end_example
+
+- ~Super Vocab (note type).apkg~:
+  This is the Anki package file. You can directly import this into Anki to use the note type.
+- ~card_type1~: Contains the HTML and CSS for the "Word -> Meaning" card type.
+- ~card_type2~: Contains the HTML and CSS for the "Meaning -> Word" card type.
+- ~anki-superVocab-snippet~: snippet for org-mode to create notes.
+
+** Note Examples (in Org Mode)
+*** pedophile
+:PROPERTIES:
+:ANKI_DECK: Super Vocab (note type)
+:ANKI_NOTE_TYPE: superVocab
+:ANKI_TAGS: rap::Kendrick
+:END:
+**** Word
+# raw
+pedophile
+**** Sound
+# raw
+pedophile | ˈpedəˌfīl
+**** WordClass
+# raw
+noun
+**** Meaning
+a person who is sexually attracted to children
+
+- he is a serial pedophile and we have no idea how many other boys he has abused.
+- [[https://genius.com/31642481][Certified Lover Boy? Certified pedophiles]]
+
+**** ClozeForm
+**** Mnemonic
+[[file:image/drake.webp]]
+**** Hint
+**** Extra
+*** refuge
+:PROPERTIES:
+:ANKI_DECK: Super Vocab (note type)
+:ANKI_NOTE_TYPE: superVocab
+:ANKI_TAGS: EricRies
+:END:
+**** Word
+# raw
+refuge
+**** Sound
+# raw
+ref･uge | réfjuːdʒ |
+(!強勢は第1音節)
+**** WordClass
+# raw
+名詞複～s | -ɪz |
+**** Meaning
+1. U【危険などからの】避難; 保護 «from»
+   - a safe place of refuge 安全な避難場所
+   - I took refuge from the rain under a tree.≒A tree gave me refuge from the rain. 私は木陰で雨宿り
+     した.
+2. C «…にとっての/…からの» 避難所[施設], 保護施設[区], 慰めを与える人 «for/from»
+   - Hong Kong's role as a refuge for mainland dissidents (中国)本土からの反体制者たちの避難所として
+     の香港の役割.
+   - There is, as I mentioned at the beginning of this chapter, always one last refuge for people
+     aching to justify their own failure.
+     /Eric Ries. The Lean Startup_ How Today's Entrepreneur - Eric Ries (p. 55). (Function). Kindle
+     Edition./
+3. C｟英｠ (道路中央の)安全地帯(｟米｠ safety island).
+
+
+*tàke [sèek] réfuge in A*
+- A〈場所〉に避難する
+  - seek refuge in another country 他国へ避難[亡命]する.
+- A〈物･事〉に難を逃れる, 逃げ道を求める.
+
+**** ClozeForm
+# raw
+réfuge
+**** Mnemonic
+**** Hint
+**** Extra
+〖re(後ろへ)fuge(逃げる)〗

@@ -1,0 +1,29 @@
+# -*- mode: org -*-
+# name: anki_superVocab
+# uuid: anki_superVocab
+# key: <vocab
+# condition: t
+# --
+** $1
+:PROPERTIES:
+:ANKI_DECK: English
+:ANKI_NOTE_TYPE: superVocab
+:ANKI_TAGS: $5
+:END:
+*** Word
+# raw
+$1
+*** Sound
+# raw
+$2
+*** WordClass
+# raw
+$3
+*** Meaning
+$4
+
+*** ClozeForm
+# raw
+*** Mnemonic
+*** Hint
+*** Extra

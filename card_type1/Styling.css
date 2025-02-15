@@ -1,0 +1,201 @@
+/* Color constants */
+/* Default, non-night mode. */
+:root {
+    --text-primary-color: #303030;
+    --text-secondary-color: #505050;
+    --text-highlight1-color: #009900;
+    --text-highlight2-color: ##c695c6;
+    --text-highlight3-color: #009900;
+    --text-contrast-color: #0000ff;
+}
+
+.card.nightMode {
+    --text-primary-color: #f0f0f0;
+    --text-secondary-color: #c0c0c0;
+    --text-highlight1-color: #009900;
+    --text-highlight2-color: #c695c6;
+    --text-highlight3-color: #009900;
+    --text-contrast-color: #202020;
+}
+
+/* Layout */
+.card {
+    /*
+     *  Placing a max width on cards and centering the content box with auto margins goes a long
+     *  way towards making cards look nicer. Vary the margin based on the detail and volume of
+     * information expected on the card.
+    */
+    max-width: 500px;
+    margin: auto;
+    /* On a small window/screen, we want at least some gap between the edge. So add padding. */
+    padding: 2em 1em;
+}
+
+div.sound {
+    text-align: center;
+}
+
+/* Text */
+/** Text. Font, layout. **/
+.card {
+    font-family: Lora, Menlo, baskerville, sans;
+    text-align: left;
+    line-height: 1.6em;
+    /* Why does this make the font bigger (and better on Desktop)? */
+    font-size: 1em;
+}
+
+/*
+Anki has default styles using .card.nightMode, so we need to use
+the selector .card.nightMode in order to be specific enough to overwrite.
+*/
+.card,
+.card.nightMode {
+    color: var(--text-primary-color);
+}
+
+.cloze,
+.cloze b,
+.cloze u,
+i.cloze {
+    color: var(--text-highlight1-color);
+}
+
+.manual-cloze {
+    color: #fe019a;
+}
+
+quote em {
+    color: var(--text-highlight2-color);
+}
+
+/* Bold underline, italic and link styles. */
+b {
+    color: var(--text-highlight2-color);
+}
+u {
+    text-decoration: none;
+    color: #5eb3b3;
+}
+i {
+    color: IndianRed;
+}
+a {
+    color: #7cb9e8;
+    font-style: normal;
+}
+
+.mobile .tags:hover {
+    opacity: 1;
+    position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    text-align: center;
+    margin-top: 1.5em;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: normal;
+    font-family: san-serif;
+}
+
+h2 {
+    font-size: 1.8em.;
+    font-weight: normal;
+}
+
+h3 {
+    font-size: 1.5em;
+    font-weight: normal;
+}
+
+p.h1-subtitle {
+    font-size: 1.2em;
+    color: var(--text-secondary-color);
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+/* For section headings where it's desirable to draw attention
+to the content rather than the section heading. I've found that
+having big section headings makes reviewing cards slower as it
+takes a little longer for attention to settle on the content.
+
+So, make headings that are not actual content more subtle than
+they otherwise be in a normal document.
+*/
+h2.subtle-heading {
+    font-size: 1.3em;
+    text-align: left;
+    font-variant: small-caps;
+}
+
+hr.front-back-sep {
+    margin: 1em 0 2em 0;
+}
+
+/* Custom */
+.cloze-prompt {
+    font-size: 1.5em;
+    padding: 1em;
+}
+
+#typeans {
+    color: var(--text-contrast-color);
+}
+
+/* Semantic items. */
+/*
+quote {
+display: inline-block;
+padding-right:2em;
+padding-left:2em;
+}
+
+.card.nightMode div.definition {
+background: #444444;
+}
+
+
+em.definition {
+    color: orange;
+}
+
+div.argument {
+text-align:left;
+}
+
+div.definition {
+padding: 1em 0.5em 1em 0.5em;
+background: #EEEEEE;
+margin:auto;
+}
+*/
+
+/* Don't limit yourself to the standard fonts. */
+@font-face {
+    font-family: Lora;
+    src: url("_Lora-Regular.ttf");
+}
+@font-face {
+    font-family: Lora;
+    src: url("_Lora-Italic.ttf");
+    font-style: italic;
+}
+@font-face {
+    font-family: Lora;
+    src: url("_Lora-Bold.ttf");
+    font-weight: bold;
+}
+@font-face {
+    font-family: Lora;
+    src: url("_Lora-BoldItalic.ttf");
+    font-style: italic;
+    font-weight: bold;
+}
